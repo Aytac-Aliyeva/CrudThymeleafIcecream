@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <title>İcecreams</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <div th:if="${not #lists.isEmpty(icecreamData)}">
+
+    <h2>All Ice Creams</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Flavour</th>
+                <th>Price</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+            <tr th:each="all : ${icecreamData}">
+                <td th:text="${all.id}">Id</td>
+                <td th:text="${all.name}">Name</td>
+                <td th:text="${all.flavour}">Flavour</td>
+                <td th:text="${all.price}">Price</td>
+                <td><a th:href="@{/updateIcecream/{id}(id=${all.id})}">
+                    <button class="btn btn-primary" type="submit"> Update</button>
+                </a>
+                </td>
+
+                <td><a th:href="@{/deleteIcecream/{id}(id=${all.id})}">
+                    <button class="btn btn-danger" type="submit"> Delete</button>
+                </a>
+                </td>
+
+
+            </tr>
+        </table>
+    </div>
+
+</div>
+
+</body>
+</html>

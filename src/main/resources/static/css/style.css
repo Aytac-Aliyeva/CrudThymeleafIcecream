@@ -1,0 +1,18 @@
+.navbar-default {
+    background: #6db33f;
+}
+
+.navbar-default .navbar-brand {
+    color: white;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: white;
+}
+.buttons {
+    width: 960px;
+    margin: 0 auto;}
+
+.action_btn {
+    width: 500px;
+    margin: 0 auto;}
